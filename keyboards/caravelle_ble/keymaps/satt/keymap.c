@@ -64,14 +64,14 @@ enum {
 
 // Layer related keycodes
 #define QWERTY DF(_QWERTY)
-#define PSEU_US DF(_PSEUDO_US)
+#define PSEU_US DF(_PSEUDO_US) // 擬似US?
 #define ADJUST  MO(_ADJUST)
 
 // Special keycodes
 #define SPC_CTL CTL_T(KC_SPC)
 #define ENT_SFT SFT_T(KC_ENT)
-#define TB_CTSF C_S_T(KC_TAB)
-#define IMON_AL ALT_T(KC_F13)
+#define TB_CTSF C_S_T(KC_TAB) // Left Control and Shift when held, kc when tapped
+#define IMON_AL ALT_T(KC_F13) // 長押しで Alt 、タップで kc
 #define IMOF_AL ALT_T(KC_F14)
 #define CTALDEL LCA(KC_DEL)
 #define ESC_ADJ LT(_ADJUST, KC_ESC)
@@ -85,10 +85,13 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
     ESC_ADJ, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_DEL,  \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
+ //                                                         (              )
     TB_CTSF, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_LPRN,        KC_RPRN, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_BSPC, \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
+ //                                                         [              ]
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_LBRC,        KC_RBRC, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_QUOT, \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
+ //                                     長押しAlt,F13    長押しCTL,SPACE  長押しSFT, ENT   長押しALT,F1
                                KC_LGUI, IMOF_AL, LOWER,   SPC_CTL,        ENT_SFT, RAISE,   IMON_AL, KC_LGUI \
  //                           +--------+--------+--------+--------+      +--------+--------+--------+--------+
   ),
@@ -97,7 +100,9 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
     _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                          KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______, \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
+ //                                                                      // ` and ~, JIS Zenkaku/Hankaku
     _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,          KC_GRV,  KC_BSLS, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, _______, \
+                                                                         // ~
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
     _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,         KC_TILD, KC_PIPE, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, _______, \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
@@ -123,6 +128,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
     TB_CTSF, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    JP_LPRN,        JP_RPRN, KC_H,    KC_J,    KC_K,    KC_L,    JIS2US,  KC_BSPC, \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
+ //                                                       JISをUSに切替
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    JIS2US,         JIS2US,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, JIS2US,  \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
                                KC_LGUI, IMOF_AL, P_LOWER, SPC_CTL,        ENT_SFT, P_RAISE, IMON_AL, KC_LGUI \
@@ -145,6 +151,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
     _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                             KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______, \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
+ //                                                       JISで変換
     _______, _______, _______, _______, _______, _______, JP_ZHTG,        XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,  _______, \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
     _______, _______, _______, _______, _______, _______, _______,        KC_HOME, XXXXXXX, KC_PGDN, KC_PGUP, XXXXXXX, XXXXXXX, _______, \
