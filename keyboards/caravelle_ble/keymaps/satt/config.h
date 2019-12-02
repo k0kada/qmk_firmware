@@ -3,6 +3,7 @@
 #define BLE_HID_MAX_INTERVAL 60
 #define BLE_HID_SLAVE_LATENCY 4
 
+#define PREVENT_STUCK_MODIFIERS /* Auto-restore layer when the layer key is released */
 #define MOUSEKEY_DELAY             32
 #define MOUSEKEY_INTERVAL          16
 #define MOUSEKEY_MOVE_DELTA        3
