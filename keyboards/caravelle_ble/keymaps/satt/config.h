@@ -1,6 +1,6 @@
-#define BLE_NUS_MIN_INTERVAL 30
-#define BLE_NUS_MAX_INTERVAL 50
-#define BLE_HID_MAX_INTERVAL 60
+#define BLE_NUS_MIN_INTERVAL 20
+#define BLE_NUS_MAX_INTERVAL 40
+#define BLE_HID_MAX_INTERVAL 50
 #define BLE_HID_SLAVE_LATENCY 4
 
 #define PREVENT_STUCK_MODIFIERS /* Auto-restore layer when the layer key is released */
