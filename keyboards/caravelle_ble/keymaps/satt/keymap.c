@@ -115,7 +115,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT(
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-    _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                             KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_XX, \
+    _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                             KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC___, \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
     _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F11,         _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,KC_XX,   KC_XX,   \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
@@ -127,7 +127,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_RAISE] = LAYOUT(
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-     KC___,  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                          KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_XX,   \
+     KC___,  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                          KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC___,   \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
      KC___,  KC_XX,   KC_XX,   KC_XX,   KC_XX,    KC_XX,  KC___,          KC___,   KC_MINS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE, KC_GRV,  \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
@@ -139,11 +139,11 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    [_MOUSE] = LAYOUT(
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-      KC_XX, KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,                            KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   \
+      KC___, KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,                            KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC___,   \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
-      KC_XX, KC_XX,   KC_WHEEL, KC_XX,  KC_BTN1, KC_BTN2, KC_XX,          KC_HOME, KC_MLFT, KC_MDN,  KC_MUP,  KC_MRGT, KC_XX,   KC_XX,   \
+      KC___, KC_XX,   KC_WHEEL, KC_XX,  KC_BTN1, KC_BTN2, KC_XX,          KC_HOME, KC_MLFT, KC_MDN,  KC_MUP,  KC_MRGT, KC_XX,   KC_XX,   \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
-      KC_XX, KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,          KC_END,  KC_XX,   KC_XX,    KC_XX,  KC_XX,   KC_XX,   KC_XX,   \
+      KC___, KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,          KC_END,  KC_XX,   KC_XX,    KC_XX,  KC_XX,   KC_XX,   KC_XX,   \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
                                KC___,   KC___,   KC___,   KC___,          KC___,   KC___,   KC___,    KC___  \
  //                           +--------+--------+--------+--------+      +--------+--------+--------+--------+
@@ -151,11 +151,11 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    [_WHEEL] = LAYOUT(
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-      KC_XX, KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,                            KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   \
+      KC___, KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,                            KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC___,   \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
-      KC_XX, KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,          KC_HOME, KC_WLFT, KC_WDN,  KC_WUP,  KC_WRGT, KC_XX,   KC_XX,   \
+      KC___, KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,          KC_HOME, KC_WLFT, KC_WDN,  KC_WUP,  KC_WRGT, KC_XX,   KC_XX,   \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
-      KC_XX, KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,          KC_END,  KC_XX,   KC_XX,    KC_XX,  KC_XX,   KC_XX,   KC_XX,   \
+      KC___, KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,          KC_END,  KC_XX,   KC_XX,    KC_XX,  KC_XX,   KC_XX,   KC_XX,   \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
                                KC___,   KC___,   KC___,   KC___,          KC___,   KC___,   KC___,    KC___  \
  //                           +--------+--------+--------+--------+      +--------+--------+--------+--------+
@@ -201,7 +201,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_ADJUST] = LAYOUT ( \
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-    _______, AD_WO_L, ADV_ID1, ADV_ID2, ADV_ID3, ADV_ID4,                          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+    _______, AD_WO_L, ADV_ID1, ADV_ID2, ADV_ID3, ADV_ID4,                          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
     _______, DELBNDS, DEL_ID1, DEL_ID2, DEL_ID3, DEL_ID4, QWERTY,         XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY, KC_MNXT, KC_MPRV, \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
