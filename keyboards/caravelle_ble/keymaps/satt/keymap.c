@@ -263,30 +263,30 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-    case P_LOWER:
-      if (record->event.pressed) {
-        layer_on(_PSEUDO_US_LOWER);
-        update_tri_layer(_PSEUDO_US_LOWER, _PSEUDO_US_RAISE, _ADJUST);
-      } else {
-        layer_off(_PSEUDO_US_LOWER);
-        update_tri_layer(_PSEUDO_US_LOWER, _PSEUDO_US_RAISE, _ADJUST);
-      }
-      return false;
-      break;
-    case P_RAISE:
-      if (record->event.pressed) {
-        layer_on(_PSEUDO_US_RAISE);
-        update_tri_layer(_PSEUDO_US_LOWER, _PSEUDO_US_RAISE, _ADJUST);
-      } else {
-        layer_off(_PSEUDO_US_RAISE);
-        update_tri_layer(_PSEUDO_US_LOWER, _PSEUDO_US_RAISE, _ADJUST);
-      }
-      return false;
-      break;
-    case JIS2US:
-      action_pseudo_lut(record, _QWERTY, keymap_jis2us);
-      return false;
-      break;
+    // case P_LOWER:
+    //   if (record->event.pressed) {
+    //     layer_on(_PSEUDO_US_LOWER);
+    //     update_tri_layer(_PSEUDO_US_LOWER, _PSEUDO_US_RAISE, _ADJUST);
+    //   } else {
+    //     layer_off(_PSEUDO_US_LOWER);
+    //     update_tri_layer(_PSEUDO_US_LOWER, _PSEUDO_US_RAISE, _ADJUST);
+    //   }
+    //   return false;
+    //   break;
+    // case P_RAISE:
+    //   if (record->event.pressed) {
+    //     layer_on(_PSEUDO_US_RAISE);
+    //     update_tri_layer(_PSEUDO_US_LOWER, _PSEUDO_US_RAISE, _ADJUST);
+    //   } else {
+    //     layer_off(_PSEUDO_US_RAISE);
+    //     update_tri_layer(_PSEUDO_US_LOWER, _PSEUDO_US_RAISE, _ADJUST);
+    //   }
+    //   return false;
+    //   break;
+    // case JIS2US:
+    //   action_pseudo_lut(record, _QWERTY, keymap_jis2us);
+    //   return false;
+    //   break;
 
     default:
       if (record->event.pressed) {
