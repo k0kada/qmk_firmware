@@ -65,8 +65,8 @@ enum {
 };
 
 // Layer related keycodes
-#define QWERTY DF(_QWERTY)
-#define PSEU_US DF(_PSEUDO_US) // 擬似US?
+// #define QWERTY DF(_QWERTY)
+// #define PSEU_US DF(_PSEUDO_US) // 擬似US?
 #define ADJUST  MO(_ADJUST)
 #define MOUSE DF(_MOUSE)
 #define WHEEL DE(_WHEEL)
@@ -75,8 +75,8 @@ enum {
 #define SPC_CTL CTL_T(KC_SPC)
 #define ENT_SFT SFT_T(KC_ENT)
 #define TB_CTSF C_S_T(KC_TAB) // Left Control and Shift when held, kc when tapped
-#define IMON_AL ALT_T(KC_F13) // 長押しで Alt 、タップで kc
-#define IMOF_AL ALT_T(KC_F14)
+#define IMON_AL ALT_T(KC_F13) // 長押しで Alt 、タップでF13
+#define IMOF_AL ALT_T(KC_F14) // 長押しでAlt, タップでF14
 #define CTALDEL LCA(KC_DEL)
 #define ESC_ADJ LT(_ADJUST, KC_ESC)
 #define KC_CTLTB CTL_T(KC_TAB)
@@ -108,18 +108,18 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_LBRC,        KC_RBRC, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
- //                            長押しAlt,F13                                              長押しSFT, ENT   長押しALT,F1
-                               IMOF_AL, KC_LGUI, LOWER,   KC_SPC,        KC_ENT,   RAISE,   IMON_AL, KC_LGUI \
+ //                    (長押しAlt,F13), (Windows)                                    (長押しSFT,F14), (Windows)
+                               IMOF_AL, KC_LGUI, LOWER,   KC_SPC,         KC_ENT,   RAISE,   IMON_AL, KC_LGUI \
  //                           +--------+--------+--------+--------+      +--------+--------+--------+--------+
   ),
 
   [_LOWER] = LAYOUT(
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-    KC___,   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                             KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC___, \
+    KC___,   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                             KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC___,   \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
     KC___,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F11,         KC___,   KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,KC_XX,   KC_XX,   \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
-    KC___,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F12,         KC_TILD, KC_PIPE, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC___, \
+    KC___,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F12,         KC_TILD, KC_PIPE, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_XX,   \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
                                KC___,   KC___,   KC___,   KC___,          KC___,   KC___,   KC___,   KC___ \
  //                           +--------+--------+--------+--------+      +--------+--------+--------+--------+
@@ -129,21 +129,24 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
      KC___,  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                          KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC___,   \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
-     KC___,  KC_XX,   KC_XX,   KC_XX,   KC_XX,    KC_XX,  KC___,          KC___,   KC_MINS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE, KC_GRV,  \
+     KC___,  KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC___,          KC___,   KC_MINS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE, KC_GRV,  \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
-     KC___,  KC_XX,   KC_XX,   KC_XX,   KC_XX,    KC_XX,  KC___,          KC___,   KC_UNDS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS, KC_TILD, \
+     KC___,  KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC___,          KC___,   KC_UNDS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS, KC_TILD, \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
                                KC___,   KC___,   KC___,   KC___,          KC___,   KC___,   KC___,   KC___ \
  //                           +--------+--------+--------+--------+      +--------+--------+--------+--------+
   ),
 
-  [_ADJUST] = LAYOUT ( \
+  [_ADJUST] = LAYOUT(
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-    KC___, AD_WO_L, ADV_ID1, ADV_ID2, ADV_ID3, ADV_ID4,                            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC___, \
+ // KC___,   AD_WO_L, ADV_ID1, ADV_ID2, ADV_ID3, ADV_ID4,                          KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC___, 
+    KC___,   AD_WO_L, KC_XX,   KC_XX,   KC_XX,   KC_XX,                             KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC___, \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
-    KC___, DELBNDS, DEL_ID1, DEL_ID2, DEL_ID3, DEL_ID4, QWERTY,           XXXXXXX, KC_MUTE, KC_MPLY, KC_VOLU, KC_VOLD, KC_MNXT, KC_MPRV, \
+ // KC___,   DELBNDS, DEL_ID1, DEL_ID2, DEL_ID3, DEL_ID4, QWERTY,         KC_XX,   KC_MUTE, KC_MPLY, KC_VOLU, KC_VOLD, KC_MNXT, KC_MPRV,
+    KC___,   DELBNDS, KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,          KC_XX,   KC_MUTE, KC_MPLY, KC_VOLU, KC_VOLD, KC_MNXT, KC_MPRV, \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
-    KC___, BATT_LV, ENT_SLP, ENT_DFU, RESET,   CTALDEL, PSEU_US,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+ // KC___,   BATT_LV, ENT_SLP, ENT_DFU, RESET,   CTALDEL, PSEU_US,        KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,
+    KC___,   BATT_LV, ENT_SLP, ENT_DFU, RESET,   CTALDEL, KC_XX,          KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX,   KC_XX, \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
                                KC___,   KC___,   KC___,   KC___,          KC___,   KC___,   KC___,   KC___ \
  //                           +--------+--------+--------+--------+      +--------+--------+--------+--------+
@@ -188,11 +191,11 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_PSEUDO_US_LOWER] = LAYOUT(
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-    KC___, JP_EXLM, JP_AT,   JP_HASH, JP_DLR,  JP_PERC,                          JP_CIRC, JP_AMPR, JP_ASTR, JP_LPRN, JP_RPRN, KC___, \
+    KC___,   JP_EXLM, JP_AT,   JP_HASH, JP_DLR,  JP_PERC,                          JP_CIRC, JP_AMPR, JP_ASTR, JP_LPRN, JP_RPRN, KC___, \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
-    KC___, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,          JP_GRV,  JP_BSLS, JP_MINS, JP_EQL,  JP_LBRC, JP_RBRC, KC___, \
+    KC___,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,          JP_GRV,  JP_BSLS, JP_MINS, JP_EQL,  JP_LBRC, JP_RBRC, KC___, \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
-    KC___, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,         JP_TILD, JP_PIPE, JP_UNDS, JP_PLUS, JP_LCBR, JP_RCBR, KC___, \
+    KC___,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,         JP_TILD, JP_PIPE, JP_UNDS, JP_PLUS, JP_LCBR, JP_RCBR, KC___, \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
                                KC___,   KC___,   KC___,   KC___,          KC___,   KC___,   KC___,   KC___ \
  //                           +--------+--------+--------+--------+      +--------+--------+--------+--------+
@@ -200,12 +203,12 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_PSEUDO_US_RAISE] = LAYOUT(
  //+--------+--------+--------+--------+--------+--------+                        +--------+--------+--------+--------+--------+--------+
-    KC___, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                             KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC___, \
+    KC___,   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                             KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC___, \
  //|--------+--------+--------+--------+--------+--------+--------+      +--------+--------+--------+--------+--------+--------+--------|
  //                                                       JISで変換
-    KC___,   KC___,   KC___,   KC___,   KC___,   KC___,   JP_ZHTG,        XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,  KC___, \
+    KC___,   KC___,   KC___,   KC___,   KC___,   KC___,   JP_ZHTG,        KC_XX,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,  KC___, \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
-    KC___,   KC___,   KC___,   KC___,   KC___,   KC___,   KC___,           KC_HOME, XXXXXXX, KC_PGDN, KC_PGUP, XXXXXXX, XXXXXXX, KC___, \
+    KC___,   KC___,   KC___,   KC___,   KC___,   KC___,   KC___,          KC_HOME, KC_XX,   KC_PGDN, KC_PGUP, KC_XX,   KC_XX,   KC___, \
  //|--------+--------+--------+--------+--------+--------+--------|      |--------+--------+--------+--------+--------+--------+--------|
                                KC___,   KC___,   KC___,   KC___,          KC___,   KC___,   KC___,   KC___ \
  //                           +--------+--------+--------+--------+      +--------+--------+--------+--------+
