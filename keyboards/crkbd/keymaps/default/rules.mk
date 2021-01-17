@@ -17,3 +17,4 @@ MOUSEKEY_ENABLE = yes       # Mouse keys(+4700)
 EXTRAKEY_ENABLE = yes       # Audio control and System control(+450)
 # feature RGBMATRIX
 RGBLIGHT_ENABLE = yes       # Enable WS2812 RGB underlight.
+OLED_DRIVER_ENABLE  = yes
